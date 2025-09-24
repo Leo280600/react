@@ -8,7 +8,7 @@ import List_members from './components/Members'
 
 function App() {
 
-  const [name, setName] = useState('CSMJU')
+  const [name] = useState('CSMJU')
 
   const [massge] = useState('สอบเส็จสบายใจจัง')
 
