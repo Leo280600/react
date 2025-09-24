@@ -6,6 +6,13 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   base: "./react/",
   plugins: [
-    react()
-  ,tailwindcss()],
+    react(),tailwindcss()],
+    build: {
+    rollupOptions: {
+      input: {
+        main: 'index.html',
+        react: 'react.html', // เพิ่มตรงนี้
+      }
+    }
+  }
 })
