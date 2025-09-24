@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import "../index.css";
+
 
 // Zod schema
 const MemberSchema = z.object({
-    title: z.enum(["นาย", "นาง", "นางสาว"], "กรุณาเลือกคำนำหน้า"),
+    title: z.enum(["", "นาย", "นาง", "นางสาว"], "กรุณาเลือกคำนำหน้า"),
     firstName: z.string().trim().min(1, "กรุณากรอกชื่อ"),
     lastName: z.string().trim().min(1, "กรุณากรอกนามสกุล"),
     photoUrl: z.string().url("กรุณากรอก URL ที่ถูกต้อง").optional(),
@@ -54,7 +54,7 @@ export default function MPForm() {
             photoUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Anutin_Charnvirakul_in_September_2025_%28cropped%29.png/330px-Anutin_Charnvirakul_in_September_2025_%28cropped%29.png",
             biography: "นักวิชาการด้านสาธารณสุข",
             achievements: "ผลงานด้านสุขภาพชุมชน",
-            ministerPosition: "รัรองนายกรัฐมนตรี",
+            ministerPosition: "รองนายกรัฐมนตรี",
             ministry: "กระทรวงสาธารณสุข",
             party: "พรรคภูมิใจไทย",
         },
@@ -127,16 +127,16 @@ export default function MPForm() {
 
     const handleEdit = (index: number) => {
         const member = members[index];
-        for (const key in member) {
-
+        (Object.keys(member) as (keyof Member)[]).forEach((key) => {
             setValue(key, member[key]);
-        }
+        });
         setEditingIndex(index);
     };
 
 
 
   return (
+    <>
     <div className="mp-form-container">
       <h1>ฟอร์มสมาชิกสภาผู้แทนราษฎร</h1>
 
@@ -236,5 +236,6 @@ export default function MPForm() {
         </ul>
       )}
     </div>
+    </>
   );
 }
