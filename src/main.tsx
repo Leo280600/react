@@ -12,7 +12,7 @@ createRoot(document.getElementById('root')!).render(
    {/*<App />*/}
    <TodoListHook/> 
    {/* <TodoApp /> */}
-{/*    <Coruse /> */}
+    {/*<Coruse /> */}
   </StrictMode>
   
 ) 

@@ -26,11 +26,14 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
 }
+
 
 h1 {
   font-size: 3.2em;
@@ -75,20 +78,19 @@ button:focus-visible {
 
 .blue-txt  { color: blue;  font-weight: bold; }
 
-/* MPForm.css */
 
-/* Container */
-.mp-form-container {
-  max-width: 4xl;
-  margin: auto;
+.form-container {
+  max-width: 1024px;
+  margin: 0 auto;
   padding: 2rem;
   background-color: #ffffff;
   border-radius: 1rem;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Heading */
-.mp-form-container h1 {
+
+
+.form-container h1 {
   font-size: 2rem;
   font-weight: bold;
   color: #1f2937;
@@ -96,11 +98,12 @@ button:focus-visible {
   text-align: center;
 }
 
-/* Form inputs */
-.mp-form-container input,
-.mp-form-container select,
-.mp-form-container textarea {
-  width: 100%;
+.form-container input,
+.form-container select,
+.form-container textarea {
+  display: block;          
+  width: 100%;            
+  box-sizing: border-box;  
   padding: 0.5rem 0.75rem;
   border: 1px solid #d1d5db;
   border-radius: 0.5rem;
@@ -108,15 +111,16 @@ button:focus-visible {
   transition: all 0.2s;
 }
 
-.mp-form-container input:focus,
-.mp-form-container select:focus,
-.mp-form-container textarea:focus {
+
+.form-container input:focus,
+.form-container select:focus,
+.form-container textarea:focus {
   border-color: #3b82f6;
   box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
 }
 
-/* Labels */
-.mp-form-container label {
+
+.form-container label {
   display: block;
   font-size: 0.875rem;
   font-weight: 500;
@@ -124,15 +128,15 @@ button:focus-visible {
   margin-bottom: 0.25rem;
 }
 
-/* Error messages */
-.mp-form-container .error-message {
+
+.form-container .error-message {
   color: #ef4444;
   font-size: 0.875rem;
   margin-top: 0.25rem;
 }
 
-/* Buttons */
-.mp-form-container button[type="submit"] {
+
+.form-container button[type="submit"] {
   width: 100%;
   padding: 0.5rem;
   background-color: #3b82f6;
@@ -143,30 +147,33 @@ button:focus-visible {
   transition: background-color 0.2s;
 }
 
-.mp-form-container button[type="submit"]:hover {
+.form-container button[type="submit"]:hover {
   background-color: #2563eb;
 }
 
-/* Member list */
-.mp-member-list {
-  margin-top: 2rem;
+
+.member-list {
+  max-width: 1024px; 
+  margin: 2rem auto 0 auto; 
+  padding: 0 1rem; 
 }
 
-.mp-member-list li {
+.member-list li {
   display: flex;
   align-items: center;
   padding: 1rem;
-  background-color: #f9fafb;
+  background-color: #cdcdce;  
   border-radius: 0.5rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   transition: background-color 0.2s;
+  margin-bottom: 1rem;
 }
 
-.mp-member-list li:hover {
+.member-list li:hover {
   background-color: #f3f4f6;
 }
 
-.mp-member-list img {
+.member-list img {
   width: 3rem;
   height: 3rem;
   border-radius: 9999px;
@@ -174,44 +181,43 @@ button:focus-visible {
   margin-right: 1rem;
 }
 
-.mp-member-list .member-info {
+.member-list .member-info {
   flex: 1;
 }
 
-.mp-member-list .member-info span {
+.member-list .member-info span {
   display: inline-block;
   margin-right: 0.5rem;
   color: #4b5563;
 }
 
-.mp-member-list .member-actions button {
+.member-list .member-actions button {
   padding: 0.25rem 0.5rem;
   border-radius: 0.375rem;
   font-weight: 500;
   transition: all 0.2s;
 }
 
-.mp-member-list .member-actions button.edit {
+.member-list .member-actions button.edit {
   background-color: #f59e0b;
   color: #ffffff;
 }
 
-.mp-member-list .member-actions button.edit:hover {
+.member-list .member-actions button.edit:hover {
   background-color: #d97706;
 }
 
-.mp-member-list .member-actions button.delete {
+.member-list .member-actions button.delete {
   background-color: #ef4444;
   color: #ffffff;
   margin-left: 0.5rem;
 }
 
-.mp-member-list .member-actions button.delete:hover {
+.member-list .member-actions button.delete:hover {
   background-color: #dc2626;
 }
 
-/* Section heading */
-.mp-member-list h2 {
+.member-list h2 {
   font-size: 1.25rem;
   font-weight: 600;
   color: #1f2937;
