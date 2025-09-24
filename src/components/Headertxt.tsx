@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Buttonadd from "./Buttonadd";
 
 function Headertxt({title,textsize,status}:{title: string, textsize: string, status?: boolean}) {
